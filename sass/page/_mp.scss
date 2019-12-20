@@ -782,9 +782,6 @@ section {
                 padding-left:0;
             }
         }
-        @include screen('mobile'){
-            padding-top: 2em;
-        }
     }
 }
 .book_display{
@@ -794,9 +791,16 @@ section {
         background: $lightColor;
         padding-bottom: 3em;
         margin-top: 2em;
+        @include screen('mobile'){
+            padding-bottom: 0;
+            margin-top: 0;
+        }
     }
     .tabSet{
         margin-top: -4.7em;
+        @include screen('mobile'){
+            margin-top: 0;
+        }
     }
     .tabContent{
         padding:30px 10px;
@@ -937,7 +941,6 @@ section {
         display: none;
         @include screen('mobile') {
             display: block;
-            padding:0 15px;
         }
     }
     button, input[type="button"]{
@@ -1005,8 +1008,10 @@ section {
         @include make-sm-column(4);
         @include make-md-column(4);
         @include make-lg-column(4);
-        @include gutter();
         padding-left: calc(2em - 15px);
+        @include screen('mobile'){
+           @include gutter();
+        }
     }
     form{
         display:inline;
@@ -1038,6 +1043,9 @@ section {
             font-size: .75em;
             box-shadow:0 -2px 0 inset;
             min-width: 200px;
+             @include screen('mobile'){
+                display:none;
+             }
         }
 
         @include screen('mobile'){
