@@ -17,13 +17,14 @@
 // arrow
 .slick-prev, .slick-next {
     transition: .3s ease-out;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 55px;
+    height: 18px;
+    background-size:90%;
     &:hover, &:focus {
         border: none !important;
         outline:none;
         box-shadow: 0px 0px 0px 1px $aHover inset;
+        background-size:100%;
     }
 }
 
@@ -34,10 +35,10 @@
     padding-bottom: 2em;
     @include gutter(0);
     .img-container {
-        @include aspect-ratio(10, 3.5); //PC版比例
-        @include screen('mobile') {
-             @include aspect-ratio(5, 2);
-        }
+        @include aspect-ratio(4, 1.5); //PC版比例
+        // @include screen('mobile') {
+        //      @include aspect-ratio(5, 1.5);
+        // }
     }
     .slick-prev, .slick-next{
         background-color:rgba($primaryColor, .8);
@@ -61,16 +62,19 @@
         }
     }
     .slick-dots{
+        text-align: left;
+        padding:0 5px;
         li{
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             margin:0 6px;
             button{
-                width: 12px;
-                height: 12px;
+                width: 10px;
+                height: 10px;
                 &:before{
-                    width: 12px;
-                    height: 12px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 0;
                 }
             }
         }
@@ -160,27 +164,28 @@
             &:focus {
                 border: none !important;
                 &:before {
-                    background: adjust_hue(saturate(lighten($aHover, 7), 18), -17);
-                    box-shadow: 0px 0px 0px 1px adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+                    background: adjust_hue(saturate(lighten($aColor, 7), 18), -17);
+                    box-shadow: 0px 0px 0px 1px adjust_hue(saturate(lighten($aColor, 7), 18), -17);
                 }
             }
             &:before {
-                background: #666;
-                width: 12px;
-                height: 12px;
+                background: $primaryColor;
+                width: 10px;
+                height: 10px;
+                opacity: .8;
             }
         }
         &.slick-active {
             button {
                 &:before {
-                    background: $aHover;
+                    background: $aColor;
                 }
                 &:hover,
                 &:focus {
                     &:before {
-                        opacity: .9;
+                        opacity: 1;
                         color: black;
-                        background: adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+                        background: adjust_hue(saturate(lighten($aColor, 7), 18), -17);
                     }
                 }
             }

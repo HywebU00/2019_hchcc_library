@@ -260,18 +260,26 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
+    var fatfooter_h = Math.floor($('.fatfooter nav').innerHeight());
+    $(".btn-fatfooter").css('width', fatfooter_h);
+
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("CLOSE");
                 $('.btn-fatfooter').attr('name', '收合選單/CLOSE');
+                $('.btn-fatfooter').css('width', fatfooter_h);
             } else {
                 $('.btn-fatfooter').html("OPEN");
                 $('.btn-fatfooter').attr('name', '展開選單/OPEN');
+                $('.btn-fatfooter').css('width', 'auto');
             }
         });
         $(this).stop(true, true).toggleClass('close');
     });
+
+
+
     //相簿JQ設定
     var lightbox_Status = false;
     $('.gallery').append('<div class="lightbox"><a href="#" class="light_close">關閉</a><a href="#" class="light_prev">上一張</a><a href="#" class="light_next">下一張</a><img src="" alt=""><div class="galler_overlay"></div></div>')
@@ -389,17 +397,18 @@ $(function() {
                 tabwidth = _tab.width(),
                 tabItemHeight = _tabItem.outerHeight(),
                 tabContentHeight = _tab.find('.active').next().innerHeight(),
-                tiGap = 20,
+                tiGap = 0,
                 tabItemLength = _tabItem.length,
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
-                _tabContent.css('top', tabItemHeight);
+                _tabContent.css('top', 'auto');
                 _tab.height(tabContentHeight + tabItemHeight);
                 tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
                 _tabItem.width(tabItemWidth).css('margin-left', tiGap);
+                _tabItem.width('auto').css('margin-left', tiGap);
                 _tabItem.first().css('margin-left', 0);
-                _tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
+                //_tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
             } else {
                 _tab.css('height', 'auto');
                 _tabItem.width(tabwidth);
