@@ -92,10 +92,22 @@
     .slick-prev {
         left: -10px;
         top:50%;
+        @media screen and (max-width: 1100px){
+            left:10px;
+        }
+        @include screen('mobile'){
+            left:0;
+        }
     }
     .slick-next {
         right: -10px;
         top:50%;
+        @media screen and (max-width: 1100px){
+            right:10px;
+        }
+         @include screen('mobile'){
+            right:0;
+        }
     }
     .img-container {
         width: 165px;

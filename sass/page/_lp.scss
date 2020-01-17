@@ -1,4 +1,5 @@
 .lp {
+    padding-bottom:4em;
     table {
         td {
             a {
@@ -30,9 +31,6 @@
         }
         .btn{
             color:#fff;
-            &.btn-secondary{
-                color:#000;
-            }
         }
         .name{
             text-align: left;
@@ -45,7 +43,7 @@
             list-style-type: none;
             padding: 0;
             border-top: 2px solid $primaryColor;
-
+            margin-top: 0;
             &>li {
                 padding: 1em 0;
                 border-bottom: 1px solid #DDD;
@@ -170,15 +168,17 @@
                 width: 15.5%;
             }
         }
+        .pc_select{
+            text-align:left;
+            padding:0;
+        }
     }
 
     .link_grp {
-        //padding-bottom: .5em;
+        padding-top: .83em;
         ul{
             list-style: none;
             padding:0 0 10px 0;
-            display: table;
-            table-layout: fixed;
             width: 100%;
 
             @include screen("mobile") {
@@ -188,10 +188,7 @@
         }
 
         li {
-            //float: left;
-            display: table-cell;
-            //width: 20%;
-            min-width: 120px;
+            display: inline-block;
             margin: 0;
             box-sizing: border-box;
             color: $color-word;
@@ -204,14 +201,13 @@
                 margin: .25em 0;
             }
             a{
-                border-radius: 30px;
-                border:2px solid $primaryColor;
                 background: #fff;
                 color: darken($primaryColor, 10);
-                display: block;
-                padding: .6em 1em;
+                display: inline-block;
+                padding: .85em 1em;
                 transition: all .3s;
-                margin: 0 .5em;
+                margin: 0 .2em;
+                min-width:5.5em;
                 @include screen("mobile"){
                     margin:0 .25em;
                 }
@@ -223,6 +219,24 @@
                 }
                 &.active {
                     position: relative;
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: 100%;
+                        background-color: #9a9a9a;
+                        height: 16px;
+                        width: 1px;
+                    }
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        top: 0;
+                        background-color: #fff;
+                        height: 8px;
+                        width: 1px;
+                    }
                 }
             }
         }

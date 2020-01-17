@@ -33,19 +33,20 @@ footer {
         margin: 0;
         opacity:.9;
         .Copyright{
-            @include make-xs-column(12);
+            @include make-xs-column(9);
             @include make-sm-column(8);
             @include make-md-column(10);
             @include make-lg-column(10);
         }
         .qrcode{
             text-align:right;
-            @include make-xs-column(12);
+            @include make-xs-column(3);
             @include make-sm-column(4);
             @include make-md-column(2);
             @include make-lg-column(2);
-            @include screen('mobile'){
+            @include screen('xs_mobile'){
                 text-align: left;
+                width:100%;
             }
             img{
                 width:110px;

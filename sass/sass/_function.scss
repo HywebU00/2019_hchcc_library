@@ -27,7 +27,6 @@ div.function {
                 background: $function_color;
                 border-color: $function_color;
                 color: $color-word;
-                border-radius: 4px;
                 &:hover,
                 &:focus {
                     background: darken($aHover, 0);

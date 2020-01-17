@@ -61,7 +61,7 @@ $btn-radius:.125em;
     text-shadow:none;
     &:hover,
     &:focus {
-        color: $btn-font-color;
+        color: #fff;
         outline: none;
     }
 }
@@ -100,7 +100,12 @@ $btn-radius:.125em;
     color:lighten($color-word,15);
 }
 .btn-primary {
-    @extend .btn-orange;
+    @extend %btn;
+    @include btn_setting($importantColor, #FFF);
+}
+.btn-secondary{
+    @extend %btn;
+    @include btn_setting($secondaryColor, #FFF);
 }
 // 按鈕大小
 .btn-xl {

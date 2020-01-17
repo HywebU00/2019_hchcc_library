@@ -18,11 +18,28 @@ body {
 .wrapper {
     width: 100%;
     margin: 0px auto;
-
+    position:relative;
     @include screen('mobile') {
         background: #FFF;
         overflow: hidden;
         overflow-y: auto;
+    }
+
+    &:before, &:after{
+        content: "";
+        display: block;
+        border-left: 1px solid $color-lightGray;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        z-index: -2;
+    }
+    &:before{
+        margin-right: -183px;
+    }
+    &:after{
+        margin-right: 183px;
     }
 }
 
@@ -57,12 +74,14 @@ body {
     .news, .recent_activities{
        padding-left: 3.5em;
        overflow: hidden;
+       //background-color: #fff;
        @include screen('mobile'){
             padding-left:15px;
        }
     }
     .reader_service{
         padding-left: 2em;
+        background:#fff;
     }
 
 }
@@ -70,7 +89,8 @@ body {
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
-
+    background: url(../images/flower_g_02.png) right -120px bottom -50px no-repeat;
+    background-size: 400px;
     @include screen('mobile') {
         padding-top: 60px;
     }
@@ -94,16 +114,7 @@ body {
     h3.title{
         display:inline-block;
         position: relative;
-        &:after{
-            content: "";
-            position: absolute;
-            width: 60px;
-            height: 2px;
-            transform: rotate(45deg);
-            right: -2em;
-            bottom: 15px;
-            background: $primaryColor;
-        }
+        font-family: 'Noto Serif TC', serif;
     }
 
     >.container {
@@ -111,11 +122,44 @@ body {
     }
 
     .main_image {
+        padding-left:calc( ( 100% - 1100px ) / 2 );
+        background:$lightColor url(../images/flower_w_02.png) left 10px bottom -40px no-repeat;
         .img-container {
-            height: 250px;
-
+            height: 220px;
+            position:relative;
+            &:before{
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 0;
+                width: 50%;
+                height: 100%;
+                background: url(../images/flower_w_02.png)left -110px bottom -50px no-repeat;
+                background-size: 60%;
+                z-index: 1;
+                transform: scaleX(-1);
+                @include screen('mobile'){
+                    background-position: right 50px bottom -30px;
+                    background-size: contain;
+                }
+            }
+            &:after{
+                content: "";
+                position:absolute;
+                top:0;
+                left:0;
+                width:50%;
+                height:100%;
+                background: url(../images/flower_w_02.png) left -90px top -100px no-repeat;
+                background-size:65%;
+                @include screen('mobile'){
+                    background-position: left -50px top -50px;
+                    background-size: contain;
+                }
+            }
             @include screen('tablet') {
-                height: 220px;
+                height: 200px;
             }
 
             @include screen('mobile') {
@@ -139,6 +183,45 @@ body {
             @include screen('mobile') {
                 position: static;
             }
+        }
+    }
+    .library_info{
+        background: url(../images/flower_g_01.png) right 8% bottom  no-repeat;
+        &:after{
+            display:none;
+        }
+        .info_content{
+            &:before{
+                display:none;
+            }
+            .library_name{
+                padding:0;
+                font-size: 1.125em;
+                font-weight: bold;
+                margin: .5em 0;
+            }
+            ul{
+                li{
+                    &:before{
+                        content: "";
+                        position:absolute;
+                        width:12px;
+                        height:1px;
+                        background-color: $secondaryColor;
+                        left:0;
+                        top:1.25em;
+                    }
+                }
+            }
+        }
+    }
+    .recent_activities{
+        padding-left:15px;
+        &:before{
+            display:none;
+        }
+        .activities_content{
+            background-color: rgba(255,255,255,0);
         }
     }
 }
