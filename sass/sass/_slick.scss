@@ -187,6 +187,9 @@
                 width: 10px;
                 height: 10px;
                 opacity: .8;
+                @include screen("mobile"){
+                    background: rgba(0,0,0,.6);
+                }
             }
         }
         &.slick-active {
