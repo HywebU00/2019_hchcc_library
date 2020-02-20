@@ -25,22 +25,7 @@ body {
         overflow-y: auto;
     }
 
-    &:before, &:after{
-        content: "";
-        display: block;
-        border-left: 1px solid $color-lightGray;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 50%;
-        z-index: -2;
-    }
-    &:before{
-        margin-right: -183px;
-    }
-    &:after{
-        margin-right: 183px;
-    }
+
 }
 
 // 整體共用container樣式，請注意首頁切版頁面的整齊
@@ -80,7 +65,7 @@ body {
        }
     }
     .reader_service{
-        padding-left: 2em;
+        padding-left: 3.5em;
         background:#fff;
     }
 
@@ -151,7 +136,7 @@ body {
                 left:0;
                 width:50%;
                 height:100%;
-                background: url(../images/flower_w_02.png) left -90px top -100px no-repeat;
+                background: url(../images/flower_w_02.png) left top -60px no-repeat;
                 background-size:65%;
                 @include screen('mobile'){
                     background-position: left -50px top -50px;
@@ -178,7 +163,7 @@ body {
         .function {
             position: absolute;
             right: 0;
-            top: -3px;
+            top: 0;
 
             @include screen('mobile') {
                 position: static;

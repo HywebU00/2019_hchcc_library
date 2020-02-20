@@ -26,6 +26,22 @@ section {
         }
 
     }
+     &:before, &:after{
+        content: "";
+        display: block;
+        border-left: 1px solid $color-lightGray;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        z-index: -2;
+    }
+    &:before{
+        margin-right: -183px;
+    }
+    &:after{
+        margin-right: 183px;
+    }
     .bg-1{
         background: $lightColor url(../images/flower_w_02.png) right -20px bottom -30px no-repeat;
         padding-bottom: 3em;
@@ -84,8 +100,9 @@ section {
             }
             .mpSlider{
                 position: absolute;
-                bottom: 1em;
+                top:50%;
                 left: 3em;
+                margin-top:-100px;
                 @include screen('mobile') {
                     left:0;
                     right:0;
@@ -114,7 +131,7 @@ section {
                 position:absolute;
                 width:100%;
                 height:100%;
-                background: url(../images/flower_w_02.png) right 20px bottom -50px no-repeat;
+                background: url(../images/flower_w_02.png) right -20px bottom -50px no-repeat;
                 @include screen('tablet'){
                     background-position:left -150px top -100px;
                     background-size:70%;
@@ -448,7 +465,7 @@ section {
     }
     li{
         margin:.5em;
-        padding: .9em;
+        padding: .9em 0;
         @include screen('mobile') {
             display:inline-block;
             width: 45%;

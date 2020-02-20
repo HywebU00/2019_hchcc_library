@@ -88,10 +88,10 @@
                     font-size: .875em;
                     background: #eee;
                     padding: 0 .5em;
-                    color: #555;
+                    color: lighten($color-word, 15);
                     margin: .5em 1em 0 2em;
                     &:hover {
-                        color: #555;
+                        color: $color-word;
                     }
                 }
 
@@ -154,6 +154,9 @@
                 @include screen("mobile"){
                     display:block;
                     max-height: 100%;
+                }
+                &:hover{
+                    color:$secondaryColor;
                 }
             }
         }
