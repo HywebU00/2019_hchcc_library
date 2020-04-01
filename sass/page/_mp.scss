@@ -107,6 +107,16 @@ section {
                     right:0;
                     bottom: -120px;
                 }
+                .img-container{
+                    img{
+                        object-fit: contain;
+                    }
+                }
+                .slick-dots{
+                    li button:before{
+                        background: rgba(255,255,255,0.6);
+                    }
+                }
             }
         }
         .container{

@@ -7,6 +7,12 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+        .img-container {
+            @include aspect-ratio(2, 1);
+            img{
+                object-fit: contain;
+            }
+        }
     }
 
     .library_info {

@@ -183,12 +183,12 @@
                 }
             }
             &:before {
-                background: rgba(255,255,255,.6);
+                background: rgba(0,0,0,.5);
                 width: 10px;
                 height: 10px;
                 opacity: .8;
                 @include screen("mobile"){
-                    background: rgba(0,0,0,.6);
+                    background: rgba(0,0,0,.5);
                 }
             }
         }
