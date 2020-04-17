@@ -74,7 +74,7 @@
             }
             &:before {
                 transform: rotate(45deg) !important;
-                left:calc(100% - 5px);
+                left:calc(100% - 10px);
                 @media (min-width:768px) and (max-width: 991px){
                     left:100%;
                 }
@@ -87,6 +87,7 @@
         position: relative;
         padding:0 0 0 4em;
         margin: 3em 0 2em 0;
+        min-height: 80px;
         //box-shadow: inset 1px 0 0 0 #fff;
         border-left:1px solid #fff;
         @include box-sizing;

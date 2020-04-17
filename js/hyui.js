@@ -272,7 +272,7 @@ $(function() {
             } else {
                 $('.btn-fatfooter').html("OPEN");
                 $('.btn-fatfooter').attr('name', '展開選單/OPEN');
-                $('.btn-fatfooter').css('width', 'auto');
+                $('.close').css('width', '80px');
             }
         });
         $(this).stop(true, true).toggleClass('close');

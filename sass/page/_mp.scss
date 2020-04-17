@@ -208,6 +208,7 @@ section {
         a {
             display: block;
             text-align: center;
+            border:1px solid #ddd;
             img {
                 margin: 0 auto;
             }
@@ -914,8 +915,9 @@ section {
         padding:1em 0;
     }
     .tip{
-        background-color:#fff;
+        background-color:#fafafa;
         padding:.5em 1em;
+        box-shadow:0 1px 2px rgba(0,0,0,.3);
     }
     .closed, .activity_day{
         display: inline-block;
@@ -1014,7 +1016,7 @@ section {
 //各館資訊
 .library_select{
     .pc_select{
-        text-align: right;
+        text-align: left;
         margin-top: .83em;
          @include screen('mobile') {
             display: none;
@@ -1039,7 +1041,7 @@ section {
         border-radius: 0;
         position: relative;
         transition: all .3s;
-        min-width: 5.5em;
+        min-width: 8em;
         @include box-sizing;
         &:hover, &.active{
             background: $primaryColor;
@@ -1082,10 +1084,10 @@ section {
         content:"";
         position: absolute;
         bottom:320px;
+        width:200px;
+        height: 180px;
         right:0;
-        height:500px;
-        width:calc(100% - (100% - 1100px) / 2 - 379px);
-        background: url(../images/library_info_bg.jpg) no-repeat;
+        background:url(../images/flower_g_01.png) right -100px bottom 10px no-repeat;
         z-index: -1;
         background-size: cover;
         @include screen('mobile'){
@@ -1146,9 +1148,9 @@ section {
             }
         }
         .info_list_wrap{
-            background-color: rgba(0,0,0, .85);
+            background-color: $color-lightGray;
             overflow:hidden;
-            color:#fff;
+            color:$color-word;
             padding:1em;
         }
         ul{
@@ -1194,6 +1196,10 @@ section {
             }
         }
     }
+}
+.calendar{
+    box-shadow:0 0 2px rgba(0,0,0,.3);
+    background:#fff;
 }
 .full.map{
     width: 100%;
