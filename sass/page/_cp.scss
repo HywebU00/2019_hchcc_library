@@ -608,3 +608,35 @@ div.tag {
         margin: 0 .5em;
     }
 }
+.attach_pic{
+    h3{
+        font-size: 1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 0.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
+    ol, ul{
+        @include li-reset;
+        padding:1em 0;
+        overflow: hidden;
+    }
+    li{
+        @include make-xs-column(6);
+        @include make-sm-column(4);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter();
+        padding-bottom: 1em;
+        .img-container{
+            @include aspect-ratio(3,2);
+        }
+        .caption{
+            text-align: center;
+            font-size: .938em;
+            white-space: nowrap;
+            padding:.5em 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
