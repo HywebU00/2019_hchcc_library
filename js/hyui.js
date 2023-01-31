@@ -214,7 +214,7 @@ $(function() {
         search_mode = false;
     });
     // 固定版頭
-    if ($('header .menu').length > 0){
+    if ($('header .menu').length > 0) {
         var stickyMenuTop = Math.floor($('.header .menu').offset().top);
         console.log(stickyMenuTop);
         hh = Math.floor($('.header').outerHeight(true));
@@ -401,19 +401,15 @@ $(function() {
                 tabItemLength = _tabItem.length,
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
-            if (ww >= wwSmall) {
-                _tabContent.css('top', 'auto');
-                _tab.height(tabContentHeight + tabItemHeight);
-                tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
-                _tabItem.width(tabItemWidth).css('margin-left', tiGap);
-                _tabItem.width('auto').css('margin-left', tiGap);
-                _tabItem.first().css('margin-left', 0);
-                //_tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
-            } else {
-                _tab.css('height', 'auto');
-                _tabItem.width(tabwidth);
-                _tabItem.css('margin-left', 0).last().css('position', 'relative');
-            }
+
+            _tabContent.css('top', 'auto');
+            _tab.height(tabContentHeight + tabItemHeight);
+            tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
+            _tabItem.width(tabItemWidth).css('margin-left', tiGap);
+            _tabItem.width('auto').css('margin-left', tiGap);
+            _tabItem.first().css('margin-left', 0);
+            //_tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
+
             _tabItemA.focus(tabs);
             _tabItemA.click(tabs);
 
@@ -424,20 +420,14 @@ $(function() {
                     scollDistance = tvp + tabItemHeight * tabIndex - 70;
                 _tabItem.removeClass('active');
                 _tabItemNow.addClass('active');
-                if (ww <= wwSmall) {
-                    _tabItem.not('.active').next().slideUp();
-                    _tabItemNow.next().slideDown("0", function() {
-                        $('.bookSlider').slick("setPosition", 0);
-                    });
-                    $("html,body").stop(true, false).animate({ scrollTop: scollDistance });
-                } else {
-                    _tabItem.not('.active').next().fadeOut();
-                    _tabItemNow.next().fadeIn("0", function() {
-                        $('.bookSlider').slick("setPosition", 0);
-                    });
-                    tabContentHeight = _tabItemNow.next().innerHeight();
-                    _tab.height(tabContentHeight + tabItemHeight);
-                }
+
+                _tabItem.not('.active').next().fadeOut();
+                _tabItemNow.next().fadeIn("0", function() {
+                    $('.bookSlider').slick("setPosition", 0);
+                });
+                tabContentHeight = _tabItemNow.next().innerHeight();
+                _tab.height(tabContentHeight + tabItemHeight);
+
                 e.preventDefault();
             }
         });
